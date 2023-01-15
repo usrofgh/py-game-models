@@ -12,11 +12,6 @@ def main() -> None:
     guilds = Guild.objects
     players = Player.objects
 
-    races.all().delete()
-    skills.all().delete()
-    guilds.all().delete()
-    players.all().delete()
-
     for name, attributes in json.load(open("players.json", "r")).items():
         race_name = attributes["race"]["name"]
         race_description = attributes["race"]["description"]
